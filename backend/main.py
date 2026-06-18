@@ -25,7 +25,7 @@ def _git_push_automatico():
     try:
         repo_dir = os.path.normpath(os.path.join(BASE_DIR, '..'))
         agora = datetime.now().strftime('%d/%m/%Y %H:%M')
-        subprocess.run(['git', 'add', 'js/news-data.js', 'backend/healthcheck.json'], cwd=repo_dir, check=True, capture_output=True)
+        subprocess.run(['git', 'add', 'js/news-data.js'], cwd=repo_dir, check=True, capture_output=True)
         subprocess.run(['git', 'commit', '-m', f'Atualização automática RJ NOTÍCIAS — {agora}'], cwd=repo_dir, check=True, capture_output=True)
         subprocess.run(['git', 'push'], cwd=repo_dir, check=True, capture_output=True)
         logger.info("Git push automático realizado com sucesso!")

@@ -146,6 +146,6 @@ def _extrair_noticia_generica(url, fonte):
         'imagem': imagem,
         'data': data or datetime.now().isoformat(),
         'categoria': 'cidade',
-        'prioridade': fonte['prioridade'],
+        'prioridade': fonte.get('prioridade', 50),
         'local': True
     }

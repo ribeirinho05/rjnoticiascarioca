@@ -189,7 +189,7 @@ def _extrair_entry(entry, fonte):
             'sem_data_real': data is None,
             'fonte': fonte['nome'],
             'autor': autor,
-            'prioridade': fonte['prioridade'],
+            'prioridade': fonte.get('prioridade', 50),
             '_needs_enrich': needs_enrich
         }
 
