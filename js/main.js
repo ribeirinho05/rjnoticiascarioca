@@ -51,32 +51,38 @@
     }
 
     function initHero() {
-        var el = document.getElementById('hero-section');
-        if (!el || !news.length) return;
+        var container = document.getElementById('hero-carousel');
+        var dotsEl = document.getElementById('hero-dots');
+        if (!container || !news.length) return;
         var top = news.filter(function(n) { return n.destaque; });
-        if (top.length < 3) top = news.slice(0, 3);
+        if (top.length < 5) top = news.slice(0, 5);
         var cats = typeof CATEGORIAS !== 'undefined' ? CATEGORIAS : {};
-        var items = top.slice(0, 3);
-        el.innerHTML = '<div class="hero-grid">' +
-            '<div class="hero-main" data-id="' + items[0].id + '">' +
-                '<img src="' + items[0].imagem + '" alt="">' +
-                '<div class="hero-overlay"><span class="hero-badge">' + esc((cats[items[0].categoria]||{}).nome || items[0].categoria) + '</span>' +
-                '<div class="hero-title">' + esc(items[0].titulo) + '</div>' +
-                '<div class="hero-meta">' + esc(items[0].autor) + ' &bull; ' + items[0].tempo + '</div></div></div>' +
-            '<div class="hero-side">' +
-            items.slice(1, 3).map(function(n) {
-                var ci = cats[n.categoria] || {nome: n.categoria};
-                return '<div class="hero-side-card" data-id="' + n.id + '">' +
-                    '<img src="' + n.imagem + '" alt="">' +
-                    '<div class="hero-overlay"><span class="hero-badge">' + esc(ci.nome || n.categoria) + '</span>' +
-                    '<div class="hero-title">' + esc(n.titulo) + '</div></div></div>';
-            }).join('') +
-            '</div></div>';
-        el.querySelectorAll('[data-id]').forEach(function(c) {
-            c.addEventListener('click', function() {
-                window.location.href = 'noticia.html?id=' + this.getAttribute('data-id');
-            });
+        var items = top.slice(0, 5);
+        items.forEach(function(n, i) {
+            var ci = cats[n.categoria] || {nome: n.categoria};
+            var slide = document.createElement('div');
+            slide.className = 'hero-slide' + (i === 0 ? ' active' : '');
+            slide.innerHTML = '<img src="' + n.imagem + '" alt="" loading="lazy">' +
+                '<div class="hero-slide-overlay">' +
+                '<span class="hero-slide-badge">' + esc(ci.nome || n.categoria) + '</span>' +
+                '<h2 class="hero-slide-title">' + esc(n.titulo) + '</h2>' +
+                '<span class="hero-slide-meta">' + esc(n.autor) + ' &bull; ' + n.tempo + '</span>' +
+                '</div>';
+            slide.style.cursor = 'pointer';
+            slide.addEventListener('click', function() { window.location.href = 'noticia.html?id=' + n.id; });
+            container.appendChild(slide);
+            var dot = document.createElement('span');
+            dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('data-index', i);
+            dotsEl.appendChild(dot);
         });
+        var cur = 0, slides = container.querySelectorAll('.hero-slide'), dots = dotsEl.querySelectorAll('.hero-dot');
+        function goTo(idx) { slides[cur].classList.remove('active'); dots[cur].classList.remove('active'); cur = idx; slides[cur].classList.add('active'); dots[cur].classList.add('active'); }
+        dots.forEach(function(d) { d.addEventListener('click', function() { goTo(parseInt(this.getAttribute('data-index'))); }); });
+        var prev = document.getElementById('hero-prev'), next = document.getElementById('hero-next');
+        if (prev) prev.addEventListener('click', function() { goTo((cur - 1 + slides.length) % slides.length); });
+        if (next) next.addEventListener('click', function() { goTo((cur + 1) % slides.length); });
+        setInterval(function() { goTo((cur + 1) % slides.length); }, 6000);
     }
 
     function initTicker() {
