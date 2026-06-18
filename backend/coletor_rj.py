@@ -70,6 +70,12 @@ def _extrair_links_noticias(soup, url_base):
         href = a['href'].strip()
         if any(e in href.lower() for e in excluir):
             continue
+
+        if '1dmy' in href and 'urile' in href and 'noticias' in href:
+            full = url_base.rstrip('/') + '/noticias/' + href
+            links.add(full)
+            continue
+
         if not href.startswith('http'):
             href = url_base.rstrip('/') + '/' + href.lstrip('/')
 
@@ -97,8 +103,16 @@ def _extrair_noticia_generica(url, fonte):
 
     if not titulo:
         og = soup.find('meta', property='og:title')
-        if og and og.get('content'):
+        if og and og.get('content') and len(og['content'].strip()) > 15:
             titulo = og['content'].strip()
+
+    if not titulo or len(titulo) < 10:
+        paragrafos = soup.find_all('p')
+        for p in paragrafos:
+            t = p.get_text(strip=True)
+            if 20 < len(t) < 200 and not any(x in t.lower() for x in ['cookie', 'direitos reservados', 'copyright']):
+                titulo = t
+                break
 
     if not titulo or len(titulo) < 10:
         return None
