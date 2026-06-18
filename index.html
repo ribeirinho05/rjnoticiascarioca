@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RJ NOTÍCIAS CARIOCA — Rio de Janeiro</title>
+    <meta name="description" content="RJ NOTÍCIAS CARIOCA - O portal de notícias do Rio de Janeiro. Informação carioca em tempo real.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=Merriweather:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-inner">
+            <div class="loading-logo">RJ<span>NOTÍCIAS</span></div>
+            <div class="loading-sub">CARIOCA</div>
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="topbar-left">
+                <span class="material-icons" style="font-size:14px">schedule</span>
+                <span id="topbar-date"></span>
+                <span class="topbar-sep">|</span>
+                <span id="topbar-clock"></span>
+                <span class="topbar-sep">|</span>
+                <span class="topbar-weather" id="topbar-weather">
+                    <span class="material-icons">wb_sunny</span>
+                    <span id="topbar-temp">--°</span>
+                </span>
+            </div>
+            <div class="topbar-right">
+                <button id="btn-theme" class="topbar-btn" title="Tema">
+                    <span class="material-icons">contrast</span>
+                </button>
+                <button id="btn-search-open" class="topbar-btn" title="Buscar">
+                    <span class="material-icons">search</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="header-inner">
+            <a href="/" class="brand">
+                <span class="brand-rj">RJ</span><span class="brand-noticias">NOTÍCIAS</span>
+                <span class="brand-sub">CARIOCA</span>
+            </a>
+            <nav class="nav-cats" id="nav-cats">
+                <a href="#" class="nav-cat active" data-category="todas">Início</a>
+                <a href="#" class="nav-cat" data-category="politica">Política</a>
+                <a href="#" class="nav-cat" data-category="economia">Economia</a>
+                <a href="#" class="nav-cat" data-category="cidade">Rio</a>
+                <a href="#" class="nav-cat" data-category="esportes">Esportes</a>
+                <a href="#" class="nav-cat" data-category="brasil">Brasil</a>
+                <a href="#" class="nav-cat" data-category="internacional">Mundo</a>
+                <a href="#" class="nav-cat" data-category="eventos">Eventos</a>
+                <a href="sobre.html" class="nav-cat nav-sobre">Quem Somos</a>
+            </nav>
+            <button class="nav-mobile-toggle" id="nav-mobile-toggle">
+                <span class="material-icons">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="reading-bar" id="reading-bar"></div>
+
+    <div class="ticker" id="ticker">
+        <span class="ticker-badge">URGENTE</span>
+        <div class="ticker-scroll">
+            <div class="ticker-text" id="ticker-text"></div>
+        </div>
+    </div>
+
+    <div class="search-modal" id="search-modal">
+        <div class="search-modal-box">
+            <div class="search-field">
+                <span class="material-icons">search</span>
+                <input type="text" id="search-input" placeholder="Buscar notícias..." autocomplete="off">
+                <button id="search-close" class="search-close-btn"><span class="material-icons">close</span></button>
+            </div>
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero-section" id="hero-section"></section>
+
+        <section class="quotes-bar" id="quotes-bar">
+            <div class="quotes-track" id="quotes-track"></div>
+        </section>
+
+        <section class="trending" id="trending-section">
+            <h3 class="trending-title"><span class="material-icons">local_fire_department</span> Em Alta</h3>
+            <div class="trending-pills" id="trending-pills"></div>
+        </section>
+
+        <section class="section-block" id="latest-section">
+            <div class="section-top">
+                <h2 class="section-title">Últimas Notícias</h2>
+                <div class="section-tabs" id="section-tabs">
+                    <button class="stab active" data-tab="recentes">Recentes</button>
+                    <button class="stab" data-tab="mais-lidas">Populares</button>
+                </div>
+            </div>
+            <div class="card-grid" id="card-grid"></div>
+            <button class="load-more-btn" id="load-more">Ver Mais Notícias</button>
+        </section>
+
+        <div class="full-sections">
+            <section class="section-block cat-block" id="block-politica">
+                <div class="section-top"><h2 class="section-title"><span class="dot" style="background:#D62828"></span> Política</h2></div>
+                <div class="card-row" data-cat="politica"></div>
+            </section>
+            <section class="section-block cat-block" id="block-economia">
+                <div class="section-top"><h2 class="section-title"><span class="dot" style="background:#2B9348"></span> Economia</h2></div>
+                <div class="card-row" data-cat="economia"></div>
+            </section>
+            <section class="section-block cat-block" id="block-cidade">
+                <div class="section-top"><h2 class="section-title"><span class="dot" style="background:#0077B6"></span> Rio de Janeiro</h2></div>
+                <div class="card-row" data-cat="cidade"></div>
+            </section>
+            <section class="section-block cat-block" id="block-esportes">
+                <div class="section-top"><h2 class="section-title"><span class="dot" style="background:#FB8500"></span> Esportes</h2></div>
+                <div class="card-row" data-cat="esportes"></div>
+            </section>
+            <section class="section-block cat-block" id="block-brasil">
+                <div class="section-top"><h2 class="section-title"><span class="dot" style="background:#6A4C93"></span> Brasil</h2></div>
+                <div class="card-row" data-cat="brasil"></div>
+            </section>
+            <section class="section-block cat-block" id="block-internacional">
+                <div class="section-top"><h2 class="section-title"><span class="dot" style="background:#457B9D"></span> Mundo</h2></div>
+                <div class="card-row" data-cat="internacional"></div>
+            </section>
+            <section class="section-block" id="video-section">
+                <div class="section-top"><h2 class="section-title">Vídeos</h2></div>
+                <div class="video-row" id="video-row"></div>
+            </section>
+        </div>
+    </main>
+
+    <div class="share-overlay" id="share-overlay">
+        <div class="share-box">
+            <h3>Compartilhar</h3>
+            <div class="share-grid">
+                <button class="share-item" data-p="whatsapp" style="background:#25D366"><span class="material-icons">chat</span> WhatsApp</button>
+                <button class="share-item" data-p="twitter" style="background:#1DA1F2"><span class="material-icons">tag</span> Twitter</button>
+                <button class="share-item" data-p="facebook" style="background:#1877F2"><span class="material-icons">thumb_up</span> Facebook</button>
+                <button class="share-item" data-p="copy" style="background:#555"><span class="material-icons">content_copy</span> Copiar</button>
+            </div>
+            <button class="share-x" id="share-x"><span class="material-icons">close</span></button>
+        </div>
+    </div>
+
+    <div class="vmodal" id="vmodal">
+        <button class="vmodal-x" id="vmodal-x"><span class="material-icons">close</span></button>
+        <div class="vmodal-frame" id="vmodal-frame"></div>
+        <h3 class="vmodal-title" id="vmodal-title"></h3>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <div class="footer-brand">RJ<span>NOTÍCIAS</span></div>
+                <p>Portal de notícias do Rio de Janeiro. Informação carioca com credibilidade.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Seções</h4>
+                <a href="#" data-category="politica">Política</a>
+                <a href="#" data-category="economia">Economia</a>
+                <a href="#" data-category="cidade">Rio de Janeiro</a>
+                <a href="#" data-category="esportes">Esportes</a>
+            </div>
+            <div class="footer-col">
+                <h4>Institucional</h4>
+                <a href="sobre.html">Quem Somos</a>
+                <a href="sobre.html">Termos</a>
+                <a href="sobre.html">Privacidade</a>
+                <a href="sobre.html">Contato</a>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2010-2026 RJ NOTÍCIAS CARIOCA. Todos os direitos reservados.</div>
+    </footer>
+
+    <div class="toast-box" id="toast-box"></div>
+
+    <script src="js/news-data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
