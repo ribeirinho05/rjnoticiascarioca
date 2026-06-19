@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do interior do Mato Grosso para o mundo: o brasileiro de 28 anos que decifrou os computadores quânticos — RJ NOTÍCIAS CARIOCA</title>
+    <meta name="description" content="Rafael Erasmo de Oliveira Assis opera remotamente de Sinop, no norte do MT, máquinas quânticas que cientistas do mundo inteiro ainda lutam para dominar.">
+    <meta property="og:title" content="Do interior do Mato Grosso para o mundo: o brasileiro de 28 anos que decifrou os computadores quânticos">
+    <meta property="og:description" content="Autodidata em programação, empresário criou método proprietário que transforma ruído quântico em dados úteis para agro e farmacêutica.">
+    <meta property="og:type" content="article">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=Merriweather:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .rep-hero {
+            position: relative;
+            width: 100%;
+            min-height: 68vh;
+            background: linear-gradient(170deg, var(--ocean-dark) 0%, #012A30 40%, #0A1218 100%);
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+        .rep-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
+            opacity: 0.15;
+            mix-blend-mode: screen;
+        }
+        .rep-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 60%;
+            background: linear-gradient(transparent, rgba(10,18,24,0.97));
+        }
+        .rep-hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 880px;
+            padding: 60px 40px 55px;
+        }
+        .rep-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--sunset);
+            color: #1A2030;
+            padding: 7px 20px;
+            border-radius: 30px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 22px;
+        }
+        .rep-badge .material-icons { font-size: 15px; }
+        .rep-hero h1 {
+            font-family: var(--font-display);
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.18;
+            margin-bottom: 20px;
+        }
+        .rep-hero-sub {
+            font-size: 1.12rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.75;
+            max-width: 680px;
+        }
+
+        .rep-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .rep-meta-bar {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 28px 0;
+            border-bottom: 3px solid var(--ocean);
+            margin-bottom: 40px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+        .rep-meta-bar span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .rep-meta-bar .material-icons { font-size: 15px; color: var(--ocean); }
+
+        .rep-body {
+            font-size: 1.1rem;
+            line-height: 2.05;
+            color: var(--text);
+        }
+        .rep-body p { margin-bottom: 26px; }
+        .rep-body .lead {
+            font-size: 1.22rem;
+            font-weight: 600;
+            color: var(--ocean-dark);
+            border-left: 4px solid var(--sunset);
+            padding-left: 22px;
+            margin-bottom: 36px;
+            line-height: 1.8;
+        }
+        [data-theme="dark"] .rep-body .lead { color: var(--sunset-light); }
+
+        .rep-chapeu {
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--ocean);
+            margin: 50px 0 8px;
+        }
+        .rep-subtitle {
+            font-family: var(--font-display);
+            font-size: 1.55rem;
+            font-weight: 900;
+            color: var(--text);
+            margin-bottom: 22px;
+            line-height: 1.3;
+        }
+
+        .rep-pullquote {
+            position: relative;
+            margin: 48px 0;
+            padding: 40px 36px 36px;
+            background: linear-gradient(135deg, var(--ocean) 0%, var(--ocean-dark) 100%);
+            color: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        .rep-pullquote::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -20px;
+            width: 140px;
+            height: 140px;
+            background: var(--sunset);
+            border-radius: 50%;
+            opacity: 0.12;
+        }
+        .rep-pullquote blockquote {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+        .rep-pullquote cite {
+            font-style: normal;
+            font-family: var(--font);
+            font-size: 0.82rem;
+            color: var(--sunset-light);
+            font-weight: 700;
+        }
+
+        .rep-perfil {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 40px 0;
+        }
+        .rep-perfil-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            transition: all 0.3s var(--ease);
+        }
+        .rep-perfil-item:hover {
+            border-color: var(--ocean);
+            box-shadow: var(--shadow-md);
+        }
+        .rep-perfil-item .material-icons {
+            font-size: 26px;
+            color: var(--ocean);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .rep-perfil-item h4 {
+            font-size: 0.88rem;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        .rep-perfil-item p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .rep-banner {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            margin: 40px 0;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        .rep-banner-item {
+            padding: 28px 16px;
+            text-align: center;
+            background: var(--ocean);
+            color: #fff;
+        }
+        .rep-banner-item:nth-child(even) { background: var(--ocean-dark); }
+        .rep-banner-val {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: 900;
+            color: var(--sunset-light);
+            margin-bottom: 4px;
+        }
+        .rep-banner-label {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.65;
+            font-weight: 600;
+        }
+
+        .rep-areas {
+            margin: 40px 0;
+        }
+        .rep-area {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .rep-area:last-child { border-bottom: none; }
+        .rep-area-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--sand);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        [data-theme="dark"] .rep-area-icon { background: var(--bg-card); }
+        .rep-area-icon .material-icons { font-size: 24px; color: var(--ocean); }
+        .rep-area h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+        .rep-area p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .rep-contato {
+            background: linear-gradient(135deg, var(--ocean) 0%, var(--ocean-dark) 100%);
+            color: #fff;
+            padding: 40px;
+            border-radius: var(--radius);
+            margin: 48px 0 24px;
+            text-align: center;
+        }
+        .rep-contato h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            margin-bottom: 6px;
+        }
+        .rep-contato p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 20px;
+        }
+        .rep-contato-links {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .rep-contato-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--sunset);
+            color: #1A2030;
+            padding: 11px 26px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            transition: all 0.3s var(--ease);
+        }
+        .rep-contato-link:hover { background: var(--sunset-light); }
+        .rep-contato-link .material-icons { font-size: 18px; }
+
+        .rep-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 32px 0;
+        }
+        .rep-tag {
+            background: var(--sand);
+            color: var(--ocean-dark);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.73rem;
+            font-weight: 700;
+        }
+        [data-theme="dark"] .rep-tag {
+            background: var(--bg-card);
+            color: var(--text-muted);
+        }
+
+        .rep-share {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .rep-share-btn {
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.82rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s var(--ease);
+        }
+        .rep-share-btn:hover { opacity: 0.85; }
+        .rep-share-btn.whatsapp { background: #25D366; }
+        .rep-share-btn.twitter { background: #1DA1F2; }
+        .rep-share-btn.facebook { background: #1877F2; }
+
+        .rep-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--ocean);
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 22px 0 0;
+        }
+        .rep-back:hover { color: var(--sunset); }
+
+        @media (max-width: 768px) {
+            .rep-hero { min-height: 55vh; }
+            .rep-hero h1 { font-size: 1.65rem; }
+            .rep-hero-inner { padding: 36px 20px 40px; }
+            .rep-perfil { grid-template-columns: 1fr; }
+            .rep-banner { grid-template-columns: repeat(2, 1fr); }
+            .rep-pullquote { padding: 28px 24px 28px; }
+            .rep-pullquote blockquote { font-size: 1.05rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="/" class="brand">
+                <span class="brand-rj">RJ</span><span class="brand-noticias">NOTÍCIAS</span>
+                <span class="brand-sub">CARIOCA</span>
+            </a>
+            <div style="margin-left:auto">
+                <button class="topbar-btn" title="Tema" onclick="var t=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark'; document.documentElement.setAttribute('data-theme',t); localStorage.setItem('rjnoticias-theme',t);">
+                    <span class="material-icons" style="font-size:20px;color:var(--text-muted)">contrast</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="rep-hero">
+        <div class="rep-hero-inner">
+            <div class="rep-badge">
+                <span class="material-icons">auto_awesome</span>
+                Reportagem Especial
+            </div>
+            <h1>Do interior do Mato Grosso para o mundo: o brasileiro de 28 anos que decifrou os computadores quânticos</h1>
+            <p class="rep-hero-sub">Sem laboratório, sem financiamento e sem diploma de universidade de elite. Rafael Erasmo de Oliveira Assis desenvolveu de Sinop uma tecnologia que desafia o que se conhece sobre inovação no Brasil.</p>
+        </div>
+    </section>
+
+    <!-- ARTICLE -->
+    <article class="rep-wrap">
+
+        <div class="rep-meta-bar">
+            <span><span class="material-icons">create</span> Por Redação RJ Notícias</span>
+            <span><span class="material-icons">calendar_today</span> 18 de junho de 2026</span>
+            <span><span class="material-icons">schedule</span> 13 min de leitura</span>
+            <span><span class="material-icons">place</span> Sinop, MT</span>
+        </div>
+
+        <a href="/" class="rep-back">
+            <span class="material-icons">arrow_back</span> Voltar ao início
+        </a>
+
+        <div class="rep-body">
+
+            <p class="lead">Se alguém te dissesse que um dos trabalhos mais sofisticados com computação quântica no Brasil está sendo feito por um empresário de 28 anos, operando sozinho de uma cidade com pouco mais de 150 mil habitantes no norte do Mato Grosso, você provavelmente não acreditaria. A reportagem do RJ Notícias foi conferir.</p>
+
+            <p>O que encontramos não é uma promessa de startup em fase de captação. Não é um PowerPoint com projeções otimistas. É uma operação real, com projetos concluídos, dados validados e uma tecnologia proprietária que, pelo que se sabe, nenhuma outra empresa brasileira possui.</p>
+
+            <p>O nome por trás de tudo: <strong>Rafael Erasmo de Oliveira Assis</strong>.</p>
+
+            <div class="rep-chapeu">Perfil</div>
+            <h2 class="rep-subtitle">Quem é o cara que opera computadores de bilhões de dólares do interior do Brasil</h2>
+
+            <p>Rafael tem 28 anos e mora em Sinop, Mato Grosso — uma cidade que cresceu puxada pela força do agronegócio e que fica a mais de 500 quilômetros da capital Cuiabá. Longe do eixo Rio-São Paulo. Longe dos centros de tecnologia. Longe de tudo que a gente associa com inovação de ponta.</p>
+
+            <p>Mas distância, no caso dele, nunca foi um problema. Na verdade, pode ter sido uma vantagem.</p>
+
+            <p>Rafael é desenvolvedor de software por vocação — não por carreira. Começou cedo, aprendeu sozinho, e ao longo dos anos construiu de tudo: aplicativos mobile, sites completos, robôs de automação, sistemas inteiros. "Eu programa porque gosto. Nunca precisei de alguém me mandando fazer isso. Era eu, o computador e a curiosidade", conta ele em conversa com o <strong>RJ Notícias</strong>.</p>
+
+            <p>Essa base sólida em programação — anos construindo, debugando, otimizando — é o que diferencia Rafael dos pesquisadores tradicionais de computação quântica. Ele não veio pela porta da física teórica. Veio pela porta do código. E trouxe consigo um jeito diferente de olhar para problemas.</p>
+
+        </div>
+
+        <div class="rep-perfil">
+            <div class="rep-perfil-item">
+                <span class="material-icons">person</span>
+                <div>
+                    <h4>Rafael Erasmo de O. Assis</h4>
+                    <p>28 anos, nascido e criado em Sinop, Mato Grosso</p>
+                </div>
+            </div>
+            <div class="rep-perfil-item">
+                <span class="material-icons">code</span>
+                <div>
+                    <h4>Desenvolvedor autodidata</h4>
+                    <p>Apps, sites, bots e sistemas criados por paixão, não por obrigação</p>
+                </div>
+            </div>
+            <div class="rep-perfil-item">
+                <span class="material-icons">business</span>
+                <div>
+                    <h4>Fundador da QuantAgroPharma</h4>
+                    <p>Empresa de simulação molecular quântica para agro e farmacêutica</p>
+                </div>
+            </div>
+            <div class="rep-perfil-item">
+                <span class="material-icons">psychology</span>
+                <div>
+                    <h4>Método proprietário</h4>
+                    <p>Criou solução própria para extrair dados confiáveis de hardware quântico real</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="rep-body">
+
+            <div class="rep-chapeu">Tecnologia</div>
+            <h2 class="rep-subtitle">O problema que vale bilhões — e que ele resolveu do quarto</h2>
+
+            <p>Vamos ao ponto. Computadores quânticos já existem. Não são ficção científica. IBM, Google, Amazon — todos têm máquinas quânticas em operação. Algumas delas podem ser acessadas pela internet, remotamente. Qualquer pessoa com conhecimento técnico pode, em teoria, usá-las.</p>
+
+            <p>O problema é que, na prática, essas máquinas produzem lixo. Não por serem ruins, mas porque o hardware quântico atual é absurdamente sensível. Qualquer vibração, variação de temperatura ou interferência eletromagnética corrompe os dados. O que sai do computador quântico é uma mistura de sinal útil e ruído — e separar um do outro é o maior desafio da computação quântica contemporânea.</p>
+
+            <p>Os grandes centros de pesquisa usam ferramentas padrão para tentar limpar esse ruído. Funcionam razoavelmente. Rafael olhou para essas ferramentas e pensou: dá pra fazer melhor.</p>
+
+        </div>
+
+        <div class="rep-pullquote">
+            <blockquote>Eu olhei para o comportamento do ruído e vi padrões que as ferramentas convencionais não estavam explorando. Desenvolvi meu próprio método, testei exaustivamente, e os dados vieram com uma precisão que eu mesmo não esperava. Aí eu soube: isso aqui funciona de verdade.</blockquote>
+            <cite>— Rafael Erasmo de Oliveira Assis, fundador da QuantAgroPharma</cite>
+        </div>
+
+        <div class="rep-body">
+
+            <p>O método de Rafael — cujos detalhes técnicos são mantidos em sigilo absoluto, por se tratar de propriedade intelectual — permite fazer algo que pouquíssimas organizações no mundo conseguem: simulação molecular em hardware quântico real, com resultados estatisticamente confiáveis.</p>
+
+            <p>Traduzindo: ele consegue simular como moléculas se comportam no nível atômico, com uma precisão que computadores convencionais — mesmo os mais potentes — simplesmente não alcançam. E faz isso de Sinop, Mato Grosso, acessando remotamente computadores quânticos que ficam em centros de dados nos Estados Unidos e na Europa.</p>
+
+            <div class="rep-chapeu">Impacto</div>
+            <h2 class="rep-subtitle">O que a simulação quântica pode fazer pelo campo e pela saúde</h2>
+
+            <p>A empresa de Rafael, a <strong>QuantAgroPharma</strong>, não vende produto final. Ela opera na fase que, no jargão da indústria, se chama "descoberta". É o momento em que uma empresa precisa saber: esse composto funciona? Essa molécula é estável? Esse bioinsumo vai combater essa praga?</p>
+
+            <p>Pelo método convencional, responder essas perguntas exige meses — às vezes anos — de testes em laboratório. A QuantAgroPharma entrega essas respostas em semanas. O computador quântico faz a simulação, o método de Rafael limpa os dados, e o cliente recebe um relatório técnico completo dizendo exatamente o que vale a pena levar para o laboratório e o que pode ser descartado.</p>
+
+        </div>
+
+        <div class="rep-areas">
+            <div class="rep-area">
+                <div class="rep-area-icon"><span class="material-icons">grass</span></div>
+                <div>
+                    <h4>Agroquímicos e bioinsumos</h4>
+                    <p>Simulação de novos compostos para a agricultura, com foco em eficiência e sustentabilidade</p>
+                </div>
+            </div>
+            <div class="rep-area">
+                <div class="rep-area-icon"><span class="material-icons">bug_report</span></div>
+                <div>
+                    <h4>Controle biológico de pragas</h4>
+                    <p>Análise molecular de agentes biológicos como alternativa a defensivos químicos</p>
+                </div>
+            </div>
+            <div class="rep-area">
+                <div class="rep-area-icon"><span class="material-icons">vaccines</span></div>
+                <div>
+                    <h4>Interações farmacêuticas</h4>
+                    <p>Estudo de como moléculas interagem no nível atômico para o setor de saúde</p>
+                </div>
+            </div>
+            <div class="rep-area">
+                <div class="rep-area-icon"><span class="material-icons">science</span></div>
+                <div>
+                    <h4>Fragrâncias e compostos bioativos</h4>
+                    <p>Análise de estabilidade e viabilidade de compostos para a indústria cosmética e alimentar</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="rep-banner">
+            <div class="rep-banner-item">
+                <div class="rep-banner-val">28</div>
+                <div class="rep-banner-label">Anos</div>
+            </div>
+            <div class="rep-banner-item">
+                <div class="rep-banner-val">Dezenas</div>
+                <div class="rep-banner-label">Compostos</div>
+            </div>
+            <div class="rep-banner-item">
+                <div class="rep-banner-val">100%</div>
+                <div class="rep-banner-label">Remoto</div>
+            </div>
+            <div class="rep-banner-item">
+                <div class="rep-banner-val">Único</div>
+                <div class="rep-banner-label">Método no BR</div>
+            </div>
+        </div>
+
+        <div class="rep-body">
+
+            <div class="rep-chapeu">Análise</div>
+            <h2 class="rep-subtitle">Por que essa história importa — e o que ela diz sobre o Brasil</h2>
+
+            <p>Existe um mito confortável no Brasil de que inovação de ponta só acontece em dois lugares: em universidades de elite ou em startups de São Paulo e Rio financiadas por fundos americanos. A história de Rafael é uma demolição silenciosa desse mito.</p>
+
+            <p>Ele não foi para Stanford. Não fez Y Combinator. Não tem um board de advisors com nomes conhecidos do mercado. O que ele tem é uma capacidade técnica construída ao longo de anos — primeiro com software, depois com hardware quântico — e uma determinação que não pede licença para inovar.</p>
+
+            <p>"O hardware quântico é de fora. É americano, europeu. Mas a inteligência que faz ele funcionar de verdade? Essa é brasileira. É de Sinop, Mato Grosso", diz Rafael, numa frase que provavelmente vai ecoar por muito tempo em quem acompanha tecnologia neste país.</p>
+
+            <p>Para empresas, centros de pesquisa ou startups que queiram entender se a simulação quântica pode acelerar seus projetos, a QuantAgroPharma oferece uma avaliação inicial gratuita de viabilidade.</p>
+
+        </div>
+
+        <div class="rep-contato">
+            <h3>QuantAgroPharma</h3>
+            <p>Simulação molecular quântica para agro, biodefesa e farmacêutica</p>
+            <div class="rep-contato-links">
+                <a href="https://quantagropharma.com" target="_blank" class="rep-contato-link">
+                    <span class="material-icons">language</span> quantagropharma.com
+                </a>
+                <a href="https://wa.me/5566996308546" target="_blank" class="rep-contato-link">
+                    <span class="material-icons">chat</span> (66) 99630-8546
+                </a>
+            </div>
+        </div>
+
+        <div class="rep-tags">
+            <span class="rep-tag">#Sinop</span>
+            <span class="rep-tag">#Inovação</span>
+            <span class="rep-tag">#ComputaçãoQuântica</span>
+            <span class="rep-tag">#Descoberta</span>
+            <span class="rep-tag">#TecnologiaBrasileira</span>
+            <span class="rep-tag">#MatoGrosso</span>
+            <span class="rep-tag">#CiênciaBrasileira</span>
+            <span class="rep-tag">#Agro</span>
+            <span class="rep-tag">#Bioinsumos</span>
+            <span class="rep-tag">#QuantAgroPharma</span>
+            <span class="rep-tag">#OrgulhoDeSinop</span>
+            <span class="rep-tag">#SimulaçãoMolecular</span>
+        </div>
+
+        <div class="rep-share">
+            <a class="rep-share-btn whatsapp" href="https://wa.me/?text=Brasileiro%20de%2028%20anos%20decifra%20computadores%20qu%C3%A2nticos%20do%20interior%20do%20MT%20-%20RJ%20Not%C3%ADcias" target="_blank">
+                <span class="material-icons">chat</span> WhatsApp
+            </a>
+            <a class="rep-share-btn twitter" href="https://twitter.com/intent/tweet?text=Brasileiro%20de%2028%20anos%20decifra%20computadores%20qu%C3%A2nticos%20do%20interior%20do%20MT" target="_blank">
+                <span class="material-icons">tag</span> Twitter
+            </a>
+            <a class="rep-share-btn facebook" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
+                <span class="material-icons">thumb_up</span> Facebook
+            </a>
+        </div>
+
+    </article>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-col brand-col">
+                <div class="footer-brand">RJ<span>NOTÍCIAS</span></div>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2011-2026 RJ NOTÍCIAS CARIOCA. Todos os direitos reservados.</div>
+    </footer>
+
+    <script>
+        var saved = localStorage.getItem('rjnoticias-theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+    </script>
+</body>
+</html>
